@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WiFiQrSign</string>
+    <string name="tip1">今天您未签到！</string>
+    <string name="lackPermission">缺少必要的权限</string>
+    <string name="lackPermission_message">缺少权限，请到app设置中开启必要权限！</string>
+    <string name="settings">设置</string>
+    <string name="cancel">取消</string>
+    <string name="WiFi">WiFi:</string>
+    <string name="createadress">生成签到地点二维码</string>
+    <string name="SignAddress">签到地点:</string>
+    <string name="SignName">签到名称:</string>
+    <string name="NoWifiConnect">没有wifi连接！</string>
+    <string name="signtime">有效时间:</string>
+    <string name="today">今天</string>
+    <string name="everyday">每天</string>
+    <string name="user_define_time">自定义</string>
+</resources>
