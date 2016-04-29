@@ -25,6 +25,7 @@ import de.greenrobot.event.ThreadMode;
 public class SignHomeFragment extends Fragment {
     @Bind(R.id.sign_tip1)
     TextView signTip1;
+    TextView signName;
     private String result;
 
     @Override

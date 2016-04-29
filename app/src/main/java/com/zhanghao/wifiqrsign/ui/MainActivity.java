@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.sign_home)
     FloatingActionButton signHome;
     @Bind(R.id.action_share)
-    FloatingActionButton actionShare;
+    FloatingActionButton actionShare;           //分享
     @Bind(R.id.action_login)
-    FloatingActionButton actionLogin;
+    FloatingActionButton actionLogin;           //登陆
     @Bind(R.id.action_product_qrcode)
-    FloatingActionButton actionProductQrcode;
+    FloatingActionButton actionProductQrcode;   //生成二维码
     private static final String PACKAGE_URL_SCHEME = "package:";
 
     @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initToolBar();
         initTabLayout();
         initFloatActionButton();
-        initFile();
+        initFile();                     //二维码保存到文件夹
     }
 
     private void initFile() {
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initFloatActionButton() {
         signHome.setOnClickListener(this);
         actionProductQrcode.setOnClickListener(this);
+        actionLogin.setOnClickListener(this);
     }
 
     private void init() {
@@ -136,6 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.action_product_qrcode:
                 startActivity(new Intent(this,CreateSignAddressActivity.class));
+            case R.id.action_login:
+                LoginDialog dialog = new LoginDialog(MainActivity.this);
+                dialog.show();
                 break;
         }
     }
@@ -147,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (resultCode==RESULT_OK){
             Bundle bundle=data.getExtras();
             String result=bundle.getString("result");
-            EventBus.getDefault().post(new EventHelper(Sign(result)));
+            EventBus.getDefault().post(new EventHelper(Sign(result)));  //
         }
     }
 
